@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Strumenti gratuiti per calcolare spese quotidiane: costo di un viaggio in auto, sconti e divisione delle spese.">
+  <meta name="theme-color" content="#10243a">
+  <title>ContoPratico – Calcoli semplici per le spese quotidiane</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./">Conto<span>Pratico</span></a>
+    <span class="tagline">Calcoli utili, senza complicazioni</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">STRUMENTI GRATUITI</p>
+      <h1>Capisci subito quanto spendi.</h1>
+      <p class="intro">Calcolatori semplici e gratuiti per organizzare meglio le spese di tutti i giorni. I calcoli avvengono direttamente sul tuo dispositivo.</p>
+    </section>
+
+    <section class="tools-grid" aria-label="Calcolatori">
+      <article class="tool-card">
+        <div class="tool-heading"><span class="tool-icon">🚗</span><div><h2>Costo viaggio in auto</h2><p>Stima carburante e costo per passeggero.</p></div></div>
+        <div class="fields">
+          <label> Distanza (km)<input id="distance" type="number" min="0" step="1" value="250"></label>
+          <label> Consumo (L/100 km)<input id="consumption" type="number" min="0" step="0.1" value="6.5"></label>
+          <label> Prezzo carburante (€/L)<input id="fuelPrice" type="number" min="0" step="0.01" value="1.80"></label>
+          <label> Numero passeggeri<input id="people" type="number" min="1" step="1" value="2"></label>
+        </div>
+        <button id="tripButton" type="button">Calcola viaggio</button>
+        <p class="result" id="tripResult" aria-live="polite">Inserisci i dati e calcola il costo.</p>
+        <p class="fine-print">Stima del solo carburante: non include pedaggi, parcheggi o usura del veicolo.</p>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-heading"><span class="tool-icon">％</span><div><h2>Calcolo sconto</h2><p>Scopri il prezzo finale e quanto risparmi.</p></div></div>
+        <div class="fields">
+          <label>Prezzo iniziale (€)<input id="originalPrice" type="number" min="0" step="0.01" value="79.90"></label>
+          <label>Sconto (%)<input id="discount" type="number" min="0" max="100" step="0.1" value="25"></label>
+        </div>
+        <button id="discountButton" type="button">Calcola sconto</button>
+        <p class="result" id="discountResult" aria-live="polite">Inserisci i dati e calcola lo sconto.</p>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-heading"><span class="tool-icon">🤝</span><div><h2>Dividi una spesa</h2><p>Ripartisci un conto in parti uguali.</p></div></div>
+        <div class="fields">
+          <label>Importo totale (€)<input id="totalBill" type="number" min="0" step="0.01" value="86.50"></label>
+          <label>Numero di persone<input id="billPeople" type="number" min="1" step="1" value="4"></label>
+        </div>
+        <button id="splitButton" type="button">Dividi il conto</button>
+        <p class="result" id="splitResult" aria-live="polite">Inserisci i dati e dividi il conto.</p>
+      </article>
+    </section>
+
+    <section class="about">
+      <h2>Come funzionano i calcoli?</h2>
+      <p>Gli strumenti utilizzano formule matematiche standard e i dati che inserisci. Non salviamo né inviamo i valori inseriti: i calcoli vengono eseguiti nel browser.</p>
+      <p>Le stime sono indicative e non sostituiscono preventivi, fatture o informazioni ufficiali.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> ContoPratico · Progetto indipendente</p>
+    <nav aria-label="Informazioni"><a href="privacy.html">Privacy</a><a href="about.html">Chi siamo</a></nav>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
